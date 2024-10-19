@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Special Space</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2e6f2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #d0006b; /* Romantic Pink */
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .welcome {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .quote {
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            color: #8b5cf6; /* Lavender */
+        }
+        .clock {
+            text-align: center;
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #e63946; /* Red */
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #d0006b;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #d0006b;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #d0006b; /* Romantic Pink */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #e63946; /* Darker Red */
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Welcome to Our Special Space!</h1>
+    <div class="welcome">Where Words and Dreams Unite</div>
+    <div class="clock" id="clock"></div>
+</div>
+
+<h2>About Us</h2>
+<p>We both love diving into novels and exploring new worlds through reading.</p>
+<p>As introverts, we cherish meaningful conversations over small talk.</p>
+<p>Brian: Passionate about medical research and innovative drug design.</p>
+<p>Sharleen: A dedicated student with a strong passion for medicine.</p>
+
+<h2>Gallery of Memories</h2>
+<div class="gallery" id="gallery">
+    <img src="https://via.placeholder.com/150" alt="Memory 1">
+    <img src="https://via.placeholder.com/150" alt="Memory 2">
+    <img src="https://via.placeholder.com/150" alt="Memory 3">
+    <img src="https://via.placeholder.com/150" alt="Memory 4">
+</div>
+
+<h2>Favorite Music</h2>
+<p>Our playlists include old school Bongo, Ed Sheeran, Taylor Swift, and Khalid.</p>
+<p>We enjoy music that tells a story and connects with our emotions.</p>
+
+<h2>Inspirational Quote</h2>
+<p class="quote">"Books are a uniquely portable magic." – Stephen King</p>
+
+<h2>Contact Us</h2>
+<form id="contactForm">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+
+<script>
+    // Real-time Clock
+    function updateClock() {
+        const now = new Date();
+        const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+        document.getElementById('clock').innerText = now.toLocaleString('en-US', options);
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your message!');
+        this.reset(); // Reset the form after submission
+    });
+</script>
+
+</body>
+</html>
